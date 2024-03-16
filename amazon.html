@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <title>Amazon Project</title>
 
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="styles/pages/amazon.css">
   </head>
   <body>
+    <div id="app">
     <!-- test commit -->
     <div class="amazon-header">
       <div class="amazon-header-left-section">
@@ -57,6 +59,19 @@
         
       </div>
     </div>
-    <script type="module" src="./scripts/amazon.js"></script>
+  </div>
+    <!-- <script type="module" src="./scripts/amazon.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+
+     let app = Vue.createApp({
+       data () {
+        return {
+
+        }
+      }
+     })
+     app.mount('app');
+    </script>
   </body>
 </html>
