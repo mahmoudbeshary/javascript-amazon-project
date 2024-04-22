@@ -7,7 +7,7 @@ import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOption.js';
 
 
 let cartSummaryHTML = '';
-cart.forEach((cartItem) => {
+cart.forEach((cartItem) => { 
   const productId = cartItem.productId
 
   let matchingProduct 
@@ -71,6 +71,7 @@ cartSummaryHTML +=  `
   `
 })
 
+document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
 
 function deliveryOptionsHTML(matchingProduct, cartItem) {
   let html = '';
@@ -108,7 +109,6 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
 }
 
 
-document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
 // console.log(cartSummaryHTML);
 
 document.querySelectorAll('.js-delete-link')
