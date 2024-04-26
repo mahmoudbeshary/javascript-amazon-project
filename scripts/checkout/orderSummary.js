@@ -6,7 +6,7 @@ import {
   deliveryOptions,
   getDeliveryOption,
 } from "../../data/deliveryOption.js";
-function renderOrderSummary () {
+export function renderOrderSummary () {
 
 
 let cartSummaryHTML = "";
@@ -19,12 +19,8 @@ cart.forEach((cartItem) => {
       matchingProduct = product;
     }
   });
-
   const deliveryOptionId = cartItem.deliveryOptionId;
-  let deliveryOption;
-  deliveryOptions.forEach((option) => {
-    if (deliveryOptionId === option.id) deliveryOption = option;
-  });
+  const deliveryOption = getDeliveryOption (deliveryOptionId) 
   const today = dayjs();
   const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
   const dateString = deliveryDate.format("dddd, MMMM D");
